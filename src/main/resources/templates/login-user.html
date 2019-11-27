@@ -7,11 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+<!--    {% include 'meta-data.html' %}-->
+    <th:block th:include="../meta-data"></th:block>
     <!-- Trang Đăng nhập cho User -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+<!--    {% include 'homepage/navigation.html' %}-->
+    <th:block th:include="/navigation"></th:block>
     <div class="bg-dark h-600px" style="padding-top: 100px">
         <h4 class="text-center text-light font-text">Đăng nhập để trải nghiệm hệ thống khách hàng</h4>
         <h3 class="text-center text-light font-logo"><i class="fas fa-shoe-prints text-light mr-2"></i>Tech Fashion</h3>
