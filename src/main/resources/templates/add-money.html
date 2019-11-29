@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-        lang="en">
+      lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+    <th:block th:include="/meta-data"></th:block>
     <!-- Trang nạp tiền vào tài khoản -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+    <th:block th:include="/navigation.html"></th:block>
     <div class="d-flex flex-column justify-content-start bg-dark h-750px pt-150px">
         <h3 class="text-center text-light font-text">Nạp tiền vào tài khoản của bạn để mua sắm thả ga</h3>
         <h4 class="text-center text-light font-text">Số dư hiện tại: {{ found_user.balance }}$</h4>
@@ -54,7 +54,7 @@
     
                     <!-- Back -->
                     <div>
-                        <a class="btn btn-secondary" href="{{ url_for('user') }}" role="button">Trở về</a>
+                        <a class="btn btn-secondary" th:href="@{/user}" role="button">Trở về</a>
                     </div>
                 </div>
             </form>

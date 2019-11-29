@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang cập nhật địa chỉ vận chuyển đơn hàng -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+    <th:block th:include="/navigation.html"></th:block>
     <div class="d-flex flex-column justify-content-start bg-dark h-750px pt-150px">
         <h3 class="text-center text-light font-text">Bạn muốn thay đổi địa chỉ nhận hàng của đơn hàng này</h3>
         <form method = 'POST'>
@@ -52,7 +52,7 @@
 
                 <!-- Back -->
                 <div>
-                    <a class="btn btn-secondary" href="{{ url_for('cart') }}" role="button">Trở về</a>
+                    <a class="btn btn-secondary" th:href="@{/cart}" role="button">Trở về</a>
                 </div>
             </div>
         </form>

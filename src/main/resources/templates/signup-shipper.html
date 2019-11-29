@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang đăng ký tài khoản cho Shipper -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+    <th:block th:include="/navigation.html"></th:block>
     <div class="bg-dark pt-5">
         <h4 class="text-center text-light font-text">Đăng ký để tham gia mạng lưới Shipper</h4>
         <h3 class="text-center text-light font-logo"><i class="fas fa-shoe-prints text-light mr-2"></i>Tech Fashion</h3>
@@ -86,7 +86,7 @@
 
                     <!-- Back -->
                     <div class="col-sm-2">
-                        <a href="{{ url_for('login_shipper') }}" class="font-text text-light">Trở về</a>
+                        <a th:href="@{/login-shipper.html}" class="font-text text-light">Trở về</a>
                     </div>
                 </div>
             </form>

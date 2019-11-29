@@ -7,12 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %} 
-
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang cập nhật thông tin cá nhân của User -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+<th:block th:include="/navigation.html"></th:block>
     <div class="bg-dark h-750px">
         <br><br><br>
         <h4 class="text-center text-light font-text">Cập nhật thông tin</h4>
@@ -81,7 +80,7 @@
 
                     <!-- Back -->
                     <div>
-                        <a class="btn btn-dark" href="{{ url_for('user_information') }}" role="button">Trở về</a>
+                        <a class="btn btn-dark" th:href="@{/user-information}" role="button">Trở về</a>
                     </div>
                 </div>
             </form>

@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang hiển thị giỏ hàng -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+    <th:block th:include="/navigation.html"></th:block>
     {% if template == 1 %}
         <div class = "bg-jumbotron" style="height: 1400px">
             <div class="jumbotron">
@@ -52,13 +52,13 @@
                             </form>
                         </div>
                         <div>
-                            <a href="{{ url_for('update_address') }}" class="btn btn-primary font-text" role="button">Sửa lại địa chỉ nhận hàng của đơn này</a>
+                            <a th:href="@{/update-address}" class="btn btn-primary font-text" role="button">Sửa lại địa chỉ nhận hàng của đơn này</a>
                         </div>
                     </div>
                 </div>
                 <div class="container w-25 d-flex justify-content-around pt-4">
                     <a href="{{ url_for('ordered', order_id=cart.id) }}" class="btn btn-primary btn-lg font-text" role="button">Gửi yêu cầu</a>
-                    <a href="{{ url_for('user') }}" class="btn btn-primary btn-lg font-text" role="button">Trở về</a>
+                    <a th:href="@{/user}" class="btn btn-primary btn-lg font-text" role="button">Trở về</a>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
             <h1 class="font-text text-light text-center">Giỏ hàng của bạn chưa có sản phẩm nào</h1>
             <h1 class="font-text text-light text-center">Hãy quay lại chọn sản phẩm nhé</h1>
             <div class="d-flex justify-content-center" style="margin-top: 100px">
-                <a href="{{ url_for('user') }}" class="btn btn-primary btn-lg font-text" role="button">Trở về</a>
+                <a th:href="@{/user}" class="btn btn-primary btn-lg font-text" role="button">Trở về</a>
             </div>
         </div>
     {% endif %}

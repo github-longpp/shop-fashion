@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang đăng nhập cho Shipper -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+    <th:block th:include="/navigation.html"></th:block>
     <div class="bg-dark h-600px" style="padding-top: 100px">
         <h4 class="text-center text-light font-text">Đăng nhập để tham gia mạng lưới Shipper</h4>
         <h3 class="text-center text-light font-logo"><i class="fas fa-shoe-prints text-light mr-2"></i>Tech Fashion</h3>
@@ -35,14 +35,14 @@
                         <button type="submit" class="btn btn-dark btn-sm font-text">Đăng nhập</button>
                     </div>
                     <div class="col-sm-5">
-                        <a href="{{ url_for('signup_shipper') }}" class="font-text text-light">Đăng ký</a>
+                        <a th:href="@{/signup-shipper}" class="font-text text-light">Đăng ký</a>
                     </div>
                 </div>
             </form>
         </div>
         <div class="form-group d-flex justify-content-center pt-3">
             <div class="col-sm-1.6">
-                <a class="btn btn-dark btn-sm font-text" href="{{ url_for('index') }}" role="button">Trở về Trang chủ</a>
+                <a class="btn btn-dark btn-sm font-text" th:href="@{/index}" role="button">Trở về Trang chủ</a>
             </div>
         </div>
     </div>

@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang các yêu cầu -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+    <th:block th:include="/navigation.html"></th:block>
     {% if template == 1 %}
     <div class = "bg-jumbotron d-flex flex-column justify-content-center" style="padding-top: 100px; padding-bottom: 30px; padding-left: 100px; padding-right: 100px">
         {% for order in all_order %}
@@ -50,7 +50,7 @@
         </div>
         {% endfor %}
         <div class="d-flex justify-content-center">
-            <a href="{{ url_for('shipper') }}" class="btn btn-primary btn-lg font-text" role="button">Trở về</a>
+            <a th:href="@{/shipper}" class="btn btn-primary btn-lg font-text" role="button">Trở về</a>
         </div>
     </div>
     {% elif template == 0 %}
@@ -58,7 +58,7 @@
         <h1 class="font-text text-light text-center">Hiện tại chưa có yêu cầu nào</h1>
         <h1 class="font-text text-light text-center">Vui lòng chờ</h1>
         <div class="d-flex justify-content-center" style="margin-top: 100px">
-            <a href="{{ url_for('shipper') }}" class="btn btn-primary btn-lg font-text" role="button">Trở về</a>
+            <a th:href="@{/shipper}" class="btn btn-primary btn-lg font-text" role="button">Trở về</a>
         </div>
     </div>
     {% endif %}

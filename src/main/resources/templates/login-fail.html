@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang hiển trị khi đăng nhập lỗi -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+    <th:block th:include="/navigation.html"></th:block>
     {% if template == 1 %}
     <div class="bg-dark" style="height: 700px; padding-top: 100px">
         <h1 class="font-text text-light text-center">Bạn đã nhập sai tên tài khoản hoặc mật khẩu</h1>
         <h1 class="font-text text-light text-center">Hãy kiểm tra lại</h1>
         <div class="d-flex justify-content-center mt-5">
-            <a href="{{ url_for('login_user') }}" class="btn btn-secondary btn-lg font-text" role="button">Trở về</a>
+            <a th:href="@{/login-user}" class="btn btn-secondary btn-lg font-text" role="button">Trở về</a>
         </div>
     </div>  
     {% elif template == 0 %}
@@ -25,7 +25,7 @@
         <h1 class="font-text text-light text-center">Bạn đã nhập sai tên tài khoản hoặc mật khẩu</h1>
         <h1 class="font-text text-light text-center">Hãy kiểm tra lại</h1>
         <div class="d-flex justify-content-center mt-5">
-            <a href="{{ url_for('login_shipper') }}" class="btn btn-secondary btn-lg font-text" role="button">Trở về</a>
+            <a th:href="@{/login-shipper}" class="btn btn-secondary btn-lg font-text" role="button">Trở về</a>
         </div>
     </div>  
     {% endif %}

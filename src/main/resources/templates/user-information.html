@@ -6,14 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
-    
-    {% include 'meta-data.html' %} 
-
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang thông tin cá nhân của User -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
-
+    <th:block th:include="/navigation.html"></th:block>
     <div class="bg-dark" style="height:700px; padding-top: 100px">
         <h4 class="text-center text-light font-text">Thông tin cá nhân</h4>
         <h3 class="text-center text-light font-logo"><i class="fas fa-shoe-prints text-light mr-2"></i>Tech Fashion</h3>
@@ -27,11 +24,11 @@
   
             <div class="form-group mt-4 d-flex justify-content-around">
                 <div>
-                    <a class="btn btn-dark" href="{{ url_for('user_update') }}" role="button">Cập nhật thông tin</a>
+                    <a class="btn btn-dark" th:href="@{/user-update}" role="button">Cập nhật thông tin</a>
                 </div>
                 <!-- Back -->
                 <div>
-                    <a class="btn btn-dark" href="{{ url_for('user') }}" role="button">Trở về</a>
+                    <a class="btn btn-dark" th:href="@{/user}" role="button">Trở về</a>
                 </div>
             </div>
         </div>

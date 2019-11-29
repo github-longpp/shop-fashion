@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tech Fashion</title>
 
-    {% include 'meta-data.html' %}
+    <th:block th:include="/meta-data.html"></th:block>
     <!-- Trang thông tin chi tiết của một sản phẩm -->
 </head>
 <body>
-    {% include 'homepage/navigation.html' %}
+    <th:block th:include="/navigation.html"></th:block>
     <div class="bg-jumbotron d-flex justify-content-center">
         <div class="jumbotron w-50">
             <div class="border border-dark border-5 rounded px-5 py-5" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)">
@@ -29,13 +29,13 @@
             <div class="pt-3">
                 {% if session['user-loggedin'] == True %}
                     <a href="{{ url_for('add_order', product_id=detail_product.id) }}" class="btn btn-dark font-text">Thêm vào giỏ hàng</a>
-                    <a href="{{ url_for('cart') }}" class="btn btn-dark btn-sm font-text" role="button">Trở về giỏ hàng</a>
-                    <a href="{{ url_for('order_status') }}" class="btn btn-dark btn-sm font-text" role="button">Trở về đơn hàng</a>
+                    <a th:href="@{/cart}" class="btn btn-dark btn-sm font-text" role="button">Trở về giỏ hàng</a>
+                    <a th:href="@{/order-status}" class="btn btn-dark btn-sm font-text" role="button">Trở về đơn hàng</a>
                 {% endif %}
                 {% if session['search'] %}
                     <a href="{{ url_for('search', search=session['search']) }}" class="btn btn-dark btn-sm font-text" role="button">Trở về tìm kiếm</a>
                 {% else %}
-                    <a href="{{ url_for('index') }}" class="btn btn-dark btn-lg font-text" role="button">Trở về trang chủ</a>
+                    <a th:href="@{/index}" class="btn btn-dark btn-lg font-text" role="button">Trở về trang chủ</a>
                 {% endif %}
             </div>
         </div>
